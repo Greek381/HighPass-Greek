@@ -1,0 +1,159 @@
+@import './mixins';
+
+.about {
+  margin-bottom: 40px;
+  padding-bottom: 70px;
+  background: var(--color-dark);
+  @include desktop {
+    padding-bottom: 132px;
+  }
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &-heading {
+    margin-bottom: 5px;
+    padding-top: 30px;
+    color: var(--color-white);
+  }
+  &-content-right {
+    width: 49%;
+    @include desktop {
+      width: 48%;
+    }
+    @include tablet {
+      width: 73%;
+      margin-right: 30px;
+    }
+    @include mobile {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 18px;
+    }
+  }
+  &-content-left {
+    @include desktop {
+      width: 48%;
+    }
+    @include tablet {
+      width: 73%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &-content-left img {
+    @include desktop {
+      height: 332px;
+      object-fit: cover;
+    }
+    @include tablet {
+      height: 555px;
+      object-fit: cover;
+    }
+    @include mobile {
+      height: 278px;
+      object-fit: cover;
+    }
+  }
+  &-text {
+    margin: 0;
+    font: var(--font-small-rob);
+    line-height: 28px;
+    color: var(--color-svg);
+  }
+  &-form-title {
+    font: var(--font-small-ttf);
+    font-size: 24px;
+    color: var(--color-white);
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+  &-form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    @include desktop {
+      flex-direction: column;
+    }
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &-form-input {
+    padding-left: 23px;
+    width: 75%;
+    height: 50px;
+    font: var(--font-small-rob);
+    color: var(--color-white);
+    background: #4a4a4a;
+    border: none;
+    @include desktop {
+      margin-bottom: 20px;
+    }
+    @include tablet {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    @include mobile {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  &-form-input:focus {
+    outline: 1px solid var(--color-hover);
+  }
+  &-form-input::placeholder {
+    font: var(--font-small-rob);
+    color: var(--color-svg);
+  }
+  &-form-input:hover::placeholder {
+    color: var(--color-hover);
+  }
+  &-form__btn {
+    padding: 15px 22px;
+    font: var(--font-small-rob);
+    font-weight: 700;
+    color: var(--color-white);
+    background: var(--color-hover);
+    @include desktop {
+      width: 30%;
+    }
+    @include tablet {
+      width: 40%;
+    }
+    @include middle {
+      width: 50%;
+    }
+    @include mobile {
+      width: 45%;
+    }
+  }
+  &-form__btn:hover {
+    background-color: var(--color-focus);
+    transition: .3s ease-in-out;
+  }
+  &-form__btn:focus {
+    outline: 3px solid var(--color-active);
+  }
+  &-form__btn:active {
+    background-color: var(--color-active);
+    transition: .3s ease-in-out;
+  }
+}
+.error {
+  position: absolute;
+  top: 3px;
+  left: 23px;
+  font: var(--font-small-rob);
+  font-size: 9px;
+  line-height: 1;
+  color: #f06666;
+}
