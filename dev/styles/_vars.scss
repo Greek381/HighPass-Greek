@@ -1,0 +1,17 @@
+:root {
+  //colors
+    --color-white: #ffffff;
+    --color-dark: #202020;
+    --color-hover: #FF6E30;
+    --color-active: #CE4307;
+    --color-focus: #BC572B;
+    --color-svg: #cacaca;
+
+  //fonts
+  --font-family-rob: "Roboto", sans-serif;
+  --font-family-ttf: "TTFirsNeue", sans-serif;
+  --font-small-ttf: 400 16px / 21px var(--font-family-ttf);
+  --font-title-ttf: 700 24px / 31px var(--font-family-ttf);
+  --font-small-rob: 400 16px / 19px var(--font-family-rob);
+  --font-title-rob: 700 16px / 19px var(--font-family-rob);
+}

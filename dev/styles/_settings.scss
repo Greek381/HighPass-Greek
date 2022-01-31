@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  @import './mixins';
+
+  body {
+    margin: 0;
+    font-family: "asd", sans-serif;
+    background-color: var(--color-white);
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-container {
+    overflow: hidden;
+  }
+
+  .for-mobile {
+    display: none;
+  }
+
+  .btn-reset {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 50px;
+    max-width: 1390px;
+    @include desktop {
+      padding: 0 30px;
+    }
+    @include tablet {
+      padding: 0 25px;
+    }
+    @include middle {
+      padding: 0 15px;
+    }
+  }
+
+  .js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+  }

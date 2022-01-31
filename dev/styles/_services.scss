@@ -1,0 +1,470 @@
+@import './mixins';
+
+.services {
+  margin-bottom: 40px;
+  &-heading {
+    margin-bottom: 9px;
+  }
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &-tab {
+    position: relative;
+    width: 49%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    @include middle {
+      width: 64%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &-tab::after {
+    content: '';
+    position: absolute;
+    width: 56%;
+    height: 4px;
+    left: 147px;
+    bottom: -5px;
+    background: #c4c4c4;
+    @include desktop {
+      width: 57.4%;
+    }
+    @include tablet {
+      width: 41%;
+    }
+    @include mobile {
+      width: 55%;
+      left: 130px;
+    }
+  }
+  &-tab__btn-first,
+  &-tab__btn-second {
+    position: relative;
+    font: var(--font-title-rob);
+    color: #666666;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  &-tab__btn-first::after,
+  &-tab__btn-second::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    z-index: 2;
+    left: 0;
+    bottom: -5px;
+    background: #c4c4c4;
+  }
+  &-tab__btn-first:hover,
+  &-tab__btn-second:hover {
+    color: var(--color-hover);
+    transition: .3s ease-in-out;
+  }
+  &-tab__btn-first:focus,
+  &-tab__btn-second:focus {
+    color: #666666;
+    background: #FFD4C1;
+    transition: .3s ease-in-out;
+    outline: none;
+  }
+  &-tab__btn-first.active::after,
+  &-tab__btn-second.active::after {
+    background: var(--color-hover);
+  }
+  &-tab__btn-first.active,
+  &-tab__btn-second.active {
+  color: var(--color-hover);
+}
+&-content-left {
+    width: 66%;
+    @include desktop {
+      width: 63%;
+    }
+    @include tablet {
+      width: 100%;
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 345px);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 30px;
+      grid-row-gap: 20px;
+    }
+    @include middle {
+      grid-template-columns: repeat(2, 258px);
+    }
+    @include mobile {
+      width: 100%;
+      grid-template-columns: 278px;
+      margin-bottom: 20px;
+    }
+  }
+  &-content-left__item {
+    display: flex;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &-content-left__item:not(:last-child) {
+    margin-bottom: 33px;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  &-content-left__img {
+    margin-right: 28px;
+    @include desktop {
+      width: 218px;
+      height: 184px;
+      object-fit: cover;
+    }
+    @include tablet {
+      width: 100%;
+      margin-right: 0;
+    }
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 12px;
+    }
+  }
+  &-content-left__img-retouch {
+    @include desktop {
+      margin-bottom: 13px;
+      width: 280px;
+      height: 140px;
+    }
+    @include tablet {
+      width: 100%;
+      height: 170px;
+    }
+  }
+  &-content-left-item-subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-content-left-item-heading__link {
+    margin: 0;
+    margin-bottom: 5px;
+    font: var(--font-small-ttf);
+    font-size: 24px;
+    color: var(--color-dark);
+    @include tablet {
+      margin-top: 13px;
+    }
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+  &-content-left-item-heading__link-origin {
+    width: max-content;
+    @include desktop {
+      width: auto;
+    }
+    @include tablet {
+      width: 100%;
+      margin-top: 14px;
+    }
+  }
+  &-content-left-item-heading__link:hover {
+    color: var(--color-hover);
+    transition: .3s ease-in-out;
+  }
+  &-content-left-item-heading__link:focus {
+    padding: 0 4px;
+    background: #ffd4c1;
+    transition: .3s ease-in-out;
+    outline: none;
+  }
+  &-content-left-item-heading__link:active {
+    padding: 0;
+    color: var(--color-active);
+    background: none;
+    transition: .3s ease-in-out;
+  }
+  &-content-left-item-text {
+    margin: 0;
+    margin-bottom: 11px;
+    font: var(--font-small-rob);
+    color: #999999;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  &-content-left-item__link {
+    width: 65%;
+    display: flex;
+    font: var(--font-small-rob);
+    font-weight: 700;
+    color: var(--color-hover);
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  &-content-left-item__link-origin {
+    width: 23%;
+    @include desktop {
+      width: 31%;
+    }
+    @include tablet {
+      width: 35%;
+    }
+    @include middle {
+      width: 41%;
+    }
+    @include mobile {
+      width: 35%;
+    }
+  }
+  &-content-left-item__link span {
+    position: relative;
+    margin: auto 0;
+    margin-left: 4px;
+    width: 19px;
+    height: 1px;
+    background: var(--color-hover);
+  }
+  &-content-left-item__link span::after,
+  &-content-left-item__link span::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    right: 0;
+    bottom: 2px;
+    background: var(--color-hover);
+    transform: rotate(30deg);
+  }
+  &-content-left-item__link span::before {
+    bottom: -2px;
+    transform: rotate(-30deg);
+  }
+  &-content-left-item__link:hover span,
+  &-content-left-item__link:focus span {
+    width: 27px;
+    transition: .3s ease-in-out;
+  }
+  &-content-left-item__link:focus {
+    padding: 0 5px;
+    background: #ffd4c1;
+    transition: .3s ease-in-out;
+    outline: none;
+  }
+  &-content-left-item__link:active {
+    padding: 0;
+    color: var(--color-active);
+    background: none;
+    transition: .3s ease-in-out;
+  }
+  &-content-left-item__link:active span {
+    width: 19px;
+    background: var(--color-active);
+    transition: .3s ease-in-out;
+  }
+  &-content-left-retouch {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 33px;
+    @include desktop {
+      grid-column-gap: 30px;
+      grid-row-gap: 20px;
+    }
+    @include tablet {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: 278px;
+      grid-gap: 20px;
+    }
+  }
+  &-content-left__item-retouch:not(:last-child) {
+    margin: 0;
+  }
+  &-content-left__item-retouch {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+  &-content-right {
+    margin-top: -60px;
+    width: 32%;
+    @include desktop {
+      width: 35%;
+    }
+    @include tablet {
+      margin-top: 0;
+      width: 100%;
+    }
+    @include mobile {
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+  &-content-right-sale {
+    height: 490px;
+    margin-bottom: 30px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-image: url('./img/Rectangle-26.png');
+    background-size: cover;
+    @include tablet {
+      position: relative;
+      height: 336px;
+      background-size: cover;
+      background-position: center;
+    }
+    @include mobile {
+      position: relative;
+      height: 422px;
+      background-position: center;
+    }
+  }
+  &-content-right-sale-title {
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 30px;
+    font: var(--font-title-ttf);
+    font-size: 36px;
+    line-height: 37px;
+    color: #fff500;
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+  &-content-right-sale-subtitle {
+    margin: 0;
+    margin-bottom: 210px;
+    padding-left: 30px;
+    font: var(--font-title-rob);
+    line-height: 22px;
+    color: #fff500;
+    @include tablet {
+      margin-bottom: 120px;
+    }
+    @include mobile {
+      margin-bottom: 200px;
+      font-size: 14px;
+    }
+  }
+  &-content-right-sale-sale20 {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width: 116px;
+    height: 59px;
+    background-image: url('./img/sale.png');
+    @include tablet {
+      margin: 0;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+    @include mobile {
+      margin: 0;
+      position: absolute;
+      width: 85px;
+      height: 43px;
+      top: 25px;
+      right: 30px;
+      background-size: cover;
+    }
+  }
+  &-content-right-sale-text {
+    margin: 0;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    width: 60%;
+    font: var(--font-small-rob);
+    color: var(--color-white);
+    @include tablet {
+      width: 35%;
+    }
+    @include mobile {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+  &-content-right-sale__btn {
+    margin-left: 30px;
+    padding: 15px 22px;
+    font: var(--font-small-rob);
+    font-weight: 700;
+    color: var(--color-white);
+    background: var(--color-hover);
+  }
+  &-content-right-sale__btn:hover {
+    background-color: var(--color-focus);
+    transition: .3s ease-in-out;
+  }
+  &-content-right-sale__btn:focus {
+    outline: 3px solid var(--color-active);
+  }
+  &-content-right-sale__btn:active {
+    background-color: var(--color-active);
+    transition: .3s ease-in-out;
+  }
+  &-content-right-heading {
+    margin-bottom: 12px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+  &-content-right-jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 30px;
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+    }
+  }
+  &-content-right-jobs-grid img {
+    width: 94px;
+    height: 71px;
+    object-fit: cover;
+    @include mobile {
+      width: 124px;
+      height: 94px;
+    }
+  }
+  &-content-left-retouch-grid {
+    @include tablet {
+      margin-bottom: 20px;
+      display: flex;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+      display: flex;
+    }
+  }
+}
+
+.tabcontent-services {
+  display: none;
+}
